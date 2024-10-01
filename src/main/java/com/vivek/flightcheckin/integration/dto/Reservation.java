@@ -1,14 +1,35 @@
 package com.vivek.flightcheckin.integration.dto;
 
+import java.sql.Timestamp;
+
 public class Reservation {
-
 	private Long id;
-    private Boolean checkedIn;
-    private int numberOfBags;
-    private Passenger passenger;
-    private Flight flight;
+	
+//	@Column(name = "checked_in")
+    private boolean checkedIn;
 
-    public Boolean getCheckedIn() {
+//    @Column(name = "number_of_bags")
+    private int numberOfBags;
+
+//    @OneToOne
+    private Passenger passenger;
+
+//    @OneToOne
+    private Flight flight; 
+
+
+//    @Column(name = "created_at")
+    private Timestamp created;
+
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Boolean getCheckedIn() {
         return checkedIn;
     }
 
@@ -40,12 +61,12 @@ public class Reservation {
 		this.flight = flight;
 	}
 
-	public Long getId() {
-		return id;
+	public Timestamp getCreated() {
+		return created;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setCreated(Timestamp created) {
+		this.created = created;
 	}
 
 }
