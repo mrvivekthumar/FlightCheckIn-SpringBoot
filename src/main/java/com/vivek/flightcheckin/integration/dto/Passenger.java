@@ -1,69 +1,55 @@
 package com.vivek.flightcheckin.integration.dto;
 
-public class Passenger {
-    
-	private Long id;
-	
-    private String firstname;
+public class Passenger extends AbstractEntity {
 
-    
-    private String lastname;
+	private String firstname;
 
-    
-    private String middlename;
+	private String lastname;
 
-    
-    private String email;
+	private String middlename;
 
-    
-    private String phone;
+	private String email;
 
-    public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	private String phone;
 
 	public String getFirstname() {
-        return firstname;
-    }
+		return firstname;
+	}
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
 
-    public String getLastname() {
-        return lastname;
-    }
+	public String getLastname() {
+		return lastname;
+	}
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
 
-    public String getMiddlename() {
-        return middlename;
-    }
+	public String getMiddlename() {
+		return middlename;
+	}
 
-    public void setMiddlename(String middlename) {
-        this.middlename = middlename;
-    }
+	public void setMiddlename(String middlename) {
+		this.middlename = middlename;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getPhone() {
-        return phone;
-    }
+	public String getPhone() {
+		return phone;
+	}
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 }

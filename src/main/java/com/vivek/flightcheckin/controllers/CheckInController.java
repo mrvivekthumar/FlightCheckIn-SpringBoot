@@ -25,6 +25,10 @@ public class CheckInController {
 	@PostMapping("/startCheckIn")
 	public String startCheckIn(@RequestParam("reservationId") Long reservationId, ModelMap modelMap) {
 		Reservation reservation = restClient.findReservation(reservationId);
+		if (reservation == null) {
+			modelMap.addAttribute("errorMessage", "Reservation not found for ID: " + reservationId);
+			return "startCheckIn";
+		}
 		modelMap.addAttribute("reservation", reservation);
 		System.out.println("Reservation found: " + reservation);
 		return "displayReservationDetails";
@@ -34,13 +38,19 @@ public class CheckInController {
 	@PostMapping("/completeCheckIn")
 	public String completeCheckIn(@RequestParam("reservationId") Long reservationId,
 			@RequestParam("numberOfBags") int numberOfBags) {
-		// Update reservation details with checked-in information
-		ReservationUpdateRequest updateRequest = new ReservationUpdateRequest();
-		updateRequest.setId(reservationId);
-		updateRequest.setCheckedIn(true);
-		updateRequest.setNumOfBags(numberOfBags);
-		restClient.updateReservation(updateRequest);
+		// Update reservation details with checked-in information\
+		try {
+			ReservationUpdateRequest updateRequest = new ReservationUpdateRequest();
+			updateRequest.setId(reservationId);
+			updateRequest.setCheckedIn(true);
+			updateRequest.setNumOfBags(numberOfBags);
+			restClient.updateReservation(updateRequest);
 
-		return "checkInConfirmation"; // points to checkInConfirmation.jsp
+			return "checkInConfirmation"; // points to checkInConfirmation.jsp
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

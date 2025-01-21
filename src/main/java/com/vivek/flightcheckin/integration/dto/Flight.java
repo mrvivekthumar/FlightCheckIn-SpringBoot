@@ -1,37 +1,26 @@
 package com.vivek.flightcheckin.integration.dto;
 
+public class Flight extends AbstractEntity {
 
-public class Flight {
-	
-	private Long id;
-	
 //	@Column(name = "flight_number")
-    private String flightNumber;
+	private String flightNumber;
 
 //    @Column(name = "operating_airlines")
-    private String operatingAirlines;
+	private String operatingAirlines;
 
 //    @Column(name = "departure_city")
-    private String departureCity;
+	private String departureCity;
 
 //    @Column(name = "arrival_city")
-    private String arrivalCity;
-    
+	private String arrivalCity;
+
 //    @Column(name = "date_of_departure")
-    private String dateOfDeparture;
+	private String dateOfDeparture;
 
 //    @Column(name = "estimated_departure_time")
-    private String estimatedDepartureTime;
-    
-    public Long getId() {
-		return id;
-	}
+	private String estimatedDepartureTime;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-    public String getDateOfDeparture() {
+	public String getDateOfDeparture() {
 		return dateOfDeparture;
 	}
 
@@ -47,39 +36,37 @@ public class Flight {
 		this.estimatedDepartureTime = estimatedDepartureTime;
 	}
 
+	public String getFlightNumber() {
+		return flightNumber;
+	}
 
-    public String getFlightNumber() {
-        return flightNumber;
-    }
+	public void setFlightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
+	}
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
-    }
+	public String getOperatingAirlines() {
+		return operatingAirlines;
+	}
 
-    public String getOperatingAirlines() {
-        return operatingAirlines;
-    }
+	public void setOperatingAirlines(String operatingAirlines) {
+		this.operatingAirlines = operatingAirlines;
+	}
 
-    public void setOperatingAirlines(String operatingAirlines) {
-        this.operatingAirlines = operatingAirlines;
-    }
+	public String getDepartureCity() {
+		return departureCity;
+	}
 
-    public String getDepartureCity() {
-        return departureCity;
-    }
+	public void setDepartureCity(String departureCity) {
+		this.departureCity = departureCity;
+	}
 
-    public void setDepartureCity(String departureCity) {
-        this.departureCity = departureCity;
-    }
+	public String getArrivalCity() {
+		return arrivalCity;
+	}
 
-    public String getArrivalCity() {
-        return arrivalCity;
-    }
-
-    public void setArrivalCity(String arrivalCity) {
-        this.arrivalCity = arrivalCity;
-    }
-
+	public void setArrivalCity(String arrivalCity) {
+		this.arrivalCity = arrivalCity;
+	}
 
 	@Override
 	public String toString() {
